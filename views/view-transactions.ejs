@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Transactions</title>
+    <link rel="stylesheet" href="/css/view-transactions.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <div class="container">
+        <div style="display: flex;justify-content: space-between;">
+            <a href="/transactions/add/home">Add Transactions</a>
+            <a href="/user/logout">Logout</a>
+        </div>
+        
+        <h2>View Transactions</h2>
+        <div class="filters">
+            <div>
+                <select id="from" name="from" required>
+                    <option value="" selected disabled>-- Paid By --</option>
+                    <option value="Hariom Enterprises">Hariom Enterprises</option>
+                    <option value="Amit Vishwakarma">Amit Vishwakarma</option>
+                    <option value="Ram Raikwar">Ram Raikwar</option>
+                    <option value="All">All</option>
+                </select>
+                
+                <input type="text" id="paidTo" name="paidTo" placeholder="Paid To" list="users">
+                <datalist id="users">
+                    <option value="Deepu Kumar Halwai"></option>
+                    <option value="Ajay Sharma"></option>
+                    <option value="Rahul Nigam"></option>
+                    <option value="Rajendra Patel"></option>
+                    <option value="Sahil Chourasiya"></option>
+                    <option value="Rahul Rajak"></option>
+                    <option value="Atul Vishwakarma"></option>
+                    <option value="Haseen Khan"></option>
+                    <option value="Jay Prakash Baghel"></option>
+                    <option value="Sateesh Parmar"></option>
+                    <option value="Shrikrishna Pal"></option>
+                    <option value="Shubham Goswami"></option>
+                    <option value="Dolly Ahriwar"></option>
+                    <option value="Nayan Thakur"></option>
+                    <option value="Nidhi Sen"></option>
+                    <option value="Piyush Jhariya"></option>
+                    <option value="Office expenses"></option>
+                    <option value="Other expenses"></option>
+                    <option value="GST"></option>
+                    <option value="All"></option>
+                </datalist>
+            </div>
+            
+            <label for="startDate">Paid between</label>
+            <div>
+                <input type="date" id="startDate">
+                <input type="date" id="endDate">
+            </div>
+            <button onclick="getTransaction()">Apply Filters</button>
+        </div>
+        
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Date</th>
+                        <th>Paid By</th>
+                        <th>Paid To</th>
+                        <th>Amount</th>
+                        <th>Notes</th>
+                        <th>Transaction By</th>
+                    </tr>
+                </thead>
+                <tbody id="transactionTableBody">
+                    <!-- Transactions will be dynamically inserted here -->
+                     <tr>
+                        <td>#</td>
+                        <td>Date</td>
+                        <td>Paid By</td>
+                        <td>Paid To</td>
+                        <td>Amount</td>
+                        <td>Notes</td>
+                        <td>Transaction By</td>
+                     </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="/js/view-transactions.js"></script>
+</body>
+</html>
