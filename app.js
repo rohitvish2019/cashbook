@@ -14,7 +14,7 @@ const MongoStore = require('connect-mongo')
 
 
 //const { request, urlencoded } = require('express');
-const port = 8080;
+const port = 80;
 
 //const flash = require('connect-flash');
 //const customMiddleWare = require('./config/middleware');

@@ -9,10 +9,7 @@
 </head>
 <body>
     <div class="container">
-        <div style="display: flex;justify-content: space-between;">
-            <a href="/transactions/add/home">Add Transactions</a>
-            <a href="/user/logout">Logout</a>
-        </div>
+        <%-include('_header')%>
         
         <h2>View Transactions</h2>
         <div class="filters">
@@ -54,8 +51,12 @@
             <div>
                 <input type="date" id="startDate">
                 <input type="date" id="endDate">
+                <button style="margin-left: 15px;border-radius: 6px;" onclick="getTransaction()">Apply Filters</button>
+                <label style="margin-left: 20px;" id="totalDebit"></label>
+                <label style="margin-left: 20px;" id="totalCredit"></label>
+                <label style="margin-left: 20px;" id="balance"></label>
             </div>
-            <button onclick="getTransaction()">Apply Filters</button>
+            
         </div>
         
         <div class="table-container">
@@ -66,22 +67,15 @@
                         <th>Date</th>
                         <th>Paid By</th>
                         <th>Paid To</th>
-                        <th>Amount</th>
+                        <th>Credit</th>
+                        <th>Debit</th>
                         <th>Notes</th>
                         <th>Transaction By</th>
+                        <th>Balance</th>
                     </tr>
                 </thead>
                 <tbody id="transactionTableBody">
                     <!-- Transactions will be dynamically inserted here -->
-                     <tr>
-                        <td>#</td>
-                        <td>Date</td>
-                        <td>Paid By</td>
-                        <td>Paid To</td>
-                        <td>Amount</td>
-                        <td>Notes</td>
-                        <td>Transaction By</td>
-                     </tr>
                 </tbody>
             </table>
         </div>

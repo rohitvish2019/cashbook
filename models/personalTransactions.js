@@ -1,7 +1,5 @@
 const mongoose = require('mongoose');
-const Transactions = new mongoose.Schema({
-    userId:String,
-    userName:String,
+const PersonalTransactions = new mongoose.Schema({
     amount:Number,
     date:String,
     from:String,
@@ -23,5 +21,5 @@ const Transactions = new mongoose.Schema({
     timestamps:true
 });
 
-const Transaction = mongoose.model('Transaction', Transactions);
-module.exports = Transaction;
+const PersonalTransaction = mongoose.model('PersonalTransaction', PersonalTransactions);
+module.exports = PersonalTransaction;

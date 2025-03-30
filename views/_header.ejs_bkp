@@ -1,0 +1,8 @@
+<header>
+    <div>
+        <a href="/transactions/view">View Transactions</a>
+        <a href="/transactions/add/income">Add Income</a>
+        <a href="/transactions/add/home">Add Expenses</a>
+        <a href="/user/logout">Logout</a>
+    </div>
+</header>

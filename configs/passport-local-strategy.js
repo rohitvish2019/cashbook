@@ -13,7 +13,7 @@ passport.use(new LocalStrategy({
         console.log('Authenticating the user')
         try{
             let user = await User.findOne({email: email, isValid:true});
-            let userNoPassword = await User.findOne({email: email, isValid:true},'Name email Role');
+            let userNoPassword = await User.findOne({email: email, isValid:true},'Name email Role Mobile');
             if (!user || user.password != password){
                 console.log('Invalid Username/Password');
                 return done(null, false);
@@ -39,7 +39,7 @@ passport.serializeUser(function(user, done){
 // deserializing the user from the key in the cookies
 passport.deserializeUser(async function(id, done){
     try{
-        let user = await User.findById(id, 'Name email Role');
+        let user = await User.findById(id, 'Name email Role Mobile');
         return done(null, user);
     }catch(err){
         console.log('Error in finding user --> Passport');

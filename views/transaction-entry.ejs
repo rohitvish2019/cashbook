@@ -7,24 +7,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
+    
     <div class="container">
-        <div style="display: flex;justify-content: space-between;">
-            <a href="/transactions/view">View Transactions</a>
-            <a href="/user/logout">Logout</a>
-        </div>
-        
-        <h2>Add Transaction</h2>
+        <%-include('_header')%>
+        <h2>Add Expense</h2>
         <div id="transactionForm">
             <input type="number" id="amount" name="amount" required placeholder="Amount">
             <input type="date" id="date" name="date" required>
 
-            <select id="from" name="from" required>
-                <option value="" selected disabled>-- Paid By --</option>
-                <option value="Hariom Enterprises">Hariom Enterprises</option>
-                <option value="Amit Vishwakarma">Amit Vishwakarma</option>
-                <option value="Ram Raikwar">Ram Raikwar</option>
-            </select>
-            
             <input type="text" id="paidTo" name="paidTo" placeholder="Paid To" list="users">
             <datalist id="users">
                 <option value="Deepu Kumar Halwai"></option>
@@ -46,6 +36,8 @@
                 <option value="Office expenses"></option>
                 <option value="Other expenses"></option>
                 <option value="GST"></option>
+                <option value="Amit Vishwakarma"></option>
+                <option value="Ram Raikwar"></option>
                 <option value="All"></option>
             </datalist>
             <input type="text" id="notes" name="notes" placeholder="Notes">

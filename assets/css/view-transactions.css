@@ -60,6 +60,8 @@ button:hover {
 table {
     width: 100%;
     border-collapse: collapse;
+    border: 1px solid black;
+    border-width: 1px !important;
 }
 
 thead {
@@ -69,8 +71,11 @@ thead {
 
 td, th {
     padding: 10px;
-    border: 1px solid #ddd;
-    text-align: center;
+    border: 1px solid black;
+}
+tr{
+    border: 1px solid black;
+    border-collapse: collapse;
 }
 
 @media (max-width: 480px) {

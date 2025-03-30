@@ -1,5 +1,8 @@
-module.exports.loginPage = function(Req, res) {
+module.exports.loginPage = function(req, res) {
     try {
+        if(req.isAuthenticated()){
+            return res.redirect('/transactions/add/home')
+        }
         return res.render('login')
     } catch(err) {
         return res.render('Error')

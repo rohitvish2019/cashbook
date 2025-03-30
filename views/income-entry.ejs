@@ -1,0 +1,34 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction Entry</title>
+    <link rel="stylesheet" href="/css/transaction-entry.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <div class="container">
+        <%-include('_header')%>
+        <h2>Add Income</h2>
+        <div id="transactionForm">
+            <input type="number" id="amount" name="amount" required placeholder="Amount">
+            <input type="date" id="date" name="date" required>
+            <select id="from" name="from" required>
+                <option value="" selected disabled>-- Received from --</option>
+                <option value="Phone pay">Company Payout</option>
+                <option value="Amit Vishwakarma">Amit Vishwakarma</option>
+                <option value="Ram Raikwar">Ram Raikwar</option>
+            </select>
+            <input type="text" id="notes" name="notes" placeholder="Notes">
+            <select id="paymentMethod" name="paymentMethod" required>
+                <option value="">Select Payment Method</option>
+                <option value="cash">Cash</option>
+                <option value="bank">Bank</option>
+                <option value="upi">UPI</option>
+            </select>
+            <button type="button" onclick="addNewTransaction()" class="sticky-button">Add Transaction</button>
+        </div>
+    </div>
+    <script src="/js/income-entry.js"></script>
+</body>
+</html>
